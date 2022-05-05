@@ -16,3 +16,7 @@ for p in product:
 	print(p[0]) #p[0]為商品名稱 因先輸入name
 	print(p[1]) #p[1]為商品價格 才再輸入price
 	print(p[0],'的價格為',p[1])
+
+with open('file.txt','w') as f:
+	for p in product:
+		f.write('商品為'+ p[0] + '價格為' + p[1] + '\n')
