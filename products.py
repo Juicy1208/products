@@ -19,4 +19,11 @@ for p in product:
 
 with open('file.txt','w') as f:
 	for p in product:
-		f.write('商品為'+ p[0] + '價格為' + p[1] + '\n')
+		f.write('商品為'+ p[0] + '價格為' + p[1] + '\n') 
+		#須注意+只能字串+字串 or 數字+數字，如果類型不同不能合併。
+
+#encoding(編碼) 需先設定成國際間常用的'utf-8'版本才能使中文字不會變亂碼
+with open('file.csv','w', encoding='utf-8') as ff: 
+	ff.write('product,price\n') #製作 p[0] p[1] 的title
+	for p in product:
+		ff.write(p[0] +','+ p[1] +'\n')
