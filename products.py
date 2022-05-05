@@ -26,4 +26,13 @@ with open('file.txt','w') as f:
 with open('file.csv','w', encoding='utf-8') as ff: 
 	ff.write('product,price\n') #製作 p[0] p[1] 的title
 	for p in product:
-		ff.write(p[0] +','+ p[1] +'\n')
+		ff.write(p[0] +','+ p[1] +'\n') #需加','才能換列(__) 需加'\n'才能換行(|)
+
+#讀取檔案+split
+pp = []
+with open('file.csv','r',encoding='utf-8') as fff:
+	for line in fff:
+		namee, pricee = line.strip().split(',')
+		pp.append([namee,pricee])
+print(pp)
+
